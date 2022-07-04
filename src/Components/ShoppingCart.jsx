@@ -94,14 +94,14 @@ const ShoppingCart = () => {
                         <td>
                           <NavLink to={`/cart/${e.id}`} onClick={handleClose}>
                             <img
-                              src={e.imgdata}
+                              src={e.image}
                               srcset=""
                               style={{ width: "5rem", height: "5rem" }}
                             />
                           </NavLink>
                         </td>
                         <td>
-                          <p>{e.rname}</p>
+                          <p>{e.title}</p>
                           <p>price: ${e.price}</p>
                           <p>Qauntity: {e.qnty}</p>
                         </td>

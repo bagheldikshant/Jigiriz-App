@@ -1,10 +1,11 @@
 import React from "react";
 import Cards from "../Components/Cards";
+import Home from "./Home";
 
 function Products() {
   return (
     <div className="products">
-      <Cards/>
+      <Home/>
     </div>
   );
 }

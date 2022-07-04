@@ -1,12 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import image from "../images/cashew.webp";
 import ProductsData from "./ProductsData";
+import FakeStore from "./FakeStore";
 import { ADD } from "../redux/actions/action";
+import { useParams } from "react-router-dom";
 
 const Cards = () => {
-  const [user, setUser] = useState(ProductsData);
-  console.log(user);
+  const [products, setProducts] = useState(FakeStore);
+  // console.log(user);
+  const { category } = useParams();
+
+  //For making categories
+  var allProducts = [];
+  if (category === "allproducts") {
+    allProducts = products;
+  } else {
+    const categoryproducts = products.filter((currData) => {
+      return currData.category === category;
+    });
+    allProducts = categoryproducts;
+  }
+
+  
 
   // const url = "https://shopee.p.rapidapi.com/shopee.co.id/list-main-categories";
 
@@ -20,7 +35,7 @@ const Cards = () => {
 
   // const fetchData = () => {
   //   fetch(url, options)
-      // .then((res) => res.json())
+  // .then((res) => res.json())
   //     .then((json) => setUser(json.data.categories))
   //     .catch((err) => console.error("error:" + err));
   // };
@@ -36,9 +51,8 @@ const Cards = () => {
 
   return (
     <div className="container mt-3">
-      <h2 className="text-center mt-3">Add to Cart </h2>
       <div className="row d-flex justify-content-center align-items-center">
-        {user.map((data, id) => {
+        {allProducts.map((data, id) => {
           return (
             <>
               <div
@@ -47,12 +61,12 @@ const Cards = () => {
               >
                 <img
                   class="card-img-top mt-3"
-                  src={data.imgdata}
+                  src={data.image}
                   alt="Card image cap"
                   style={{ height: "16rem" }}
                 />
                 <div class="card-body">
-                  <h5 class="card-title">{data.rname}</h5>
+                  <h5 class="card-title">{data.title}</h5>
                   <p class="card-text">Price: ${data.price}</p>
                   <div className="button_div" onClick={() => send(data)}>
                     <div class="btn btn-primary d-flex justify-content-center">

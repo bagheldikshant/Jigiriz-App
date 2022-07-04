@@ -61,20 +61,20 @@ const CardDetails = () => {
             return (
               <>
                 <div className="items_img">
-                  <img src={ele.imgdata} alt="" />
+                  <img src={ele.image} alt="" />
                 </div>
                 <div className="details">
                   <table class="table table-borderless">
                     <tr>
                       <td>
                         <p>
-                          <strong>Restaurant</strong> :{ele.rname}
+                          <strong>Restaurant</strong> :{ele.title}
                         </p>
                         <p>
                           <strong>Price</strong> : ${ele.price}
                         </p>
                         <p>
-                          <strong>SubCategory</strong> : {ele.address}
+                          <strong>SubCategory</strong> : {ele.category}
                         </p>
                         <p>
                           <strong>Total</strong> : ${ele.price * ele.qnty}

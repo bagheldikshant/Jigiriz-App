@@ -14,9 +14,8 @@ import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import ShoppingCart from "./ShoppingCart";
 import { useSelector } from "react-redux";
 
-
 function Navbar() {
-  const getdata = useSelector((state => state.cartreducer.carts));
+  const getdata = useSelector((state) => state.cartreducer.carts);
 
   const [sidebar, setSidebar] = React.useState(false);
 
@@ -77,9 +76,8 @@ function Navbar() {
             </div>
           </div>
           <div className=" shopping-cart-icon d-flex align-self-center justify-content-center flex-column">
-          <ShoppingCart />
+            <ShoppingCart />
           </div>
-          
         </div>
       </div>
       <nav
