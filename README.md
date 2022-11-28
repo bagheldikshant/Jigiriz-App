@@ -1,4 +1,4 @@
-DEPLOYED VERSION : https://jigirizimpex.azurewebsites.net
+DEPLOYED VERSION : https://jigiriz.netlify.app/
 
 
 # Getting Started with Create React App
